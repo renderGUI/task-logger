@@ -6,7 +6,7 @@
   padding: 15px 25px 15px 25px;
   column-gap: 10px;
   border-radius: 40px;
-  background-color: #242424;
+  background-color: #01315A;
 }
 
 .input,
@@ -16,11 +16,12 @@
 
 .input {
   width: 160px;
-  background-color: #242424;
+  background-color: #01315A;
+  color: #ffffff;
 }
 
 .input::placeholder {
-    color: #ffffff;
+    color: #012443;
 }
 
 .input:focus {
