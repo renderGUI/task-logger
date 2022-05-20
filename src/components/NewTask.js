@@ -18,7 +18,7 @@ const NewTask = () => {
         type="text"
         placeholder="What are you about to do?"
       ></input>
-      <Stopwatch />
+      <Stopwatch stopwatchIsRunning={stopwatchIsRunning} />
       <button
         className={classes.btn}
         onClick={toggleStopwatch}
