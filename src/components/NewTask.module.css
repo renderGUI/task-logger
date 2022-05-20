@@ -37,10 +37,9 @@
     height: 40px;
     border-radius: 50%;
     color: #ffffff;
-    background-color: #77dd77;
 }
 
 .btn:hover {
     cursor: pointer;
-    background-color: #5fcf5f;
+    background-color: #242424;
 }
