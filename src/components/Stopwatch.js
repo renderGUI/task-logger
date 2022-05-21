@@ -15,14 +15,11 @@ const Stopwatch = (props) => {
     second
   )}`;
 
-  // make new variable for displayed time and use loclastorage to show that instead
-
   useEffect(() => {
     let timer;
     if (props.stopwatchIsRunning) {
       timer = setInterval(() => {
         setSecond((previousSecond) => previousSecond + 1);
-        localStorage.setItem("savedTime", time);
       }, 1000);
     }
 
