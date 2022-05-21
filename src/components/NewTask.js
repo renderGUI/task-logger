@@ -2,6 +2,7 @@ import classes from "./NewTask.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Stopwatch from "./Stopwatch";
+import OptionButtons from "./OptionButtons";
 import { useState, useEffect } from "react";
 
 const NewTask = () => {
@@ -10,7 +11,8 @@ const NewTask = () => {
   const [task, setTask] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
-  const [showDoneButton, setShowDoneButton] = useState(false);
+  const [showOptionButtons, setShowOptionButtons] = useState(false);
+  const [shake, setShake] = useState(0);
 
   const changeHandler = (e) => {
     setTask(e.target.value);
@@ -19,6 +21,7 @@ const NewTask = () => {
   const toggleStopwatch = () => {
     if (task.trim().length === 0) {
       setStatusMessage("Task field cannot be empty!");
+      setShake(1);
       return;
     }
     setStatusMessage("");
@@ -29,9 +32,9 @@ const NewTask = () => {
   useEffect(() => {
     return () => {
       if (stopwatchIsRunning) {
-        setShowDoneButton(true);
+        setShowOptionButtons(true);
       } else {
-        setShowDoneButton(false);
+        setShowOptionButtons(false);
       }
     };
   }, [stopwatchIsRunning]);
@@ -43,6 +46,8 @@ const NewTask = () => {
         style={{
           boxShadow: stopwatchIsRunning ? "0px 0px 15px #01315A" : "",
         }}
+        onAnimationEnd={() => setShake(0)}
+        shake={shake}
       >
         <input
           className={classes.input}
@@ -68,7 +73,7 @@ const NewTask = () => {
         </button>
       </div>
       <p className={classes.status}>{statusMessage}</p>
-      {showDoneButton && <DoneButton />}
+      {showOptionButtons && <OptionButtons />}
     </div>
   );
 };
