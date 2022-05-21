@@ -7,15 +7,27 @@ const Stopwatch = (props) => {
   const [minute, setMinute] = useState(0);
   const [second, setSecond] = useState(0);
 
+  const minTwoDigits = (n) => {
+    return (n < 10 ? "0" : "") + n;
+  };
+
+  const time = `${minTwoDigits(hour)}:${minTwoDigits(minute)}:${minTwoDigits(
+    second
+  )}`;
+
+  // make new variable for displayed time and use loclastorage to show that instead
+
   useEffect(() => {
     let timer;
     if (props.stopwatchIsRunning) {
       timer = setInterval(() => {
         setSecond((previousSecond) => previousSecond + 1);
+        localStorage.setItem("savedTime", time);
       }, 1000);
     }
+
     return () => clearInterval(timer);
-  }, [props.stopwatchIsRunning]);
+  }, [props.stopwatchIsRunning, time]);
 
   useEffect(() => {
     if (second === 60) {
@@ -29,18 +41,9 @@ const Stopwatch = (props) => {
     }
   }, [second, minute]);
 
-  const hourZero = hour < 10 && 0;
-  const minuteZero = minute < 10 && 0;
-  const secondZero = second < 10 && 0;
-
   return (
     <>
-      <p className={classes.time}>
-        {hourZero}
-        {hour}:{minuteZero}
-        {minute}:{secondZero}
-        {second}
-      </p>
+      <p className={classes.time}>{time}</p>
     </>
   );
 };
