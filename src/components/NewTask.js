@@ -10,7 +10,6 @@ const NewTask = () => {
   const [stopwatchIsRunning, setStopwatchIsRunning] = useState(false);
   const [task, setTask] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
-  const [statusMessage, setStatusMessage] = useState("");
   const [showOptionButtons, setShowOptionButtons] = useState(false);
   const [shake, setShake] = useState(0);
 
@@ -20,11 +19,9 @@ const NewTask = () => {
 
   const toggleStopwatch = () => {
     if (task.trim().length === 0) {
-      setStatusMessage("Task field cannot be empty!");
       setShake(1);
       return;
     }
-    setStatusMessage("");
     setStopwatchIsRunning(!stopwatchIsRunning);
     setIsDisabled(true);
   };
@@ -72,7 +69,6 @@ const NewTask = () => {
           )}
         </button>
       </div>
-      <p className={classes.status}>{statusMessage}</p>
       {showOptionButtons && <OptionButtons />}
     </div>
   );
