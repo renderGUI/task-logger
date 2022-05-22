@@ -83,3 +83,18 @@
   cursor: pointer;
   background-color: #242424;
 }
+
+.view-log {
+  margin-left: 20px;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #012443;
+  transition: .3s ease-in-out;
+}
+
+.view-log:hover {
+  cursor: pointer;
+  color: #ffffff;
+}

@@ -5,7 +5,7 @@ import Stopwatch from "./Stopwatch";
 import OptionButtons from "./OptionButtons";
 import { useState, useEffect } from "react";
 
-const NewTask = () => {
+const NewTask = (props) => {
   console.log("NewTask.js re-rendered.");
   const [stopwatchIsRunning, setStopwatchIsRunning] = useState(false);
   const [task, setTask] = useState("");
@@ -35,6 +35,11 @@ const NewTask = () => {
       }
     };
   }, [stopwatchIsRunning]);
+
+  const taskLogHandler = () => {
+    props.setShowNewTask(false);
+    props.setShowTaskLog(true);
+  };
 
   return (
     <div>
@@ -67,6 +72,13 @@ const NewTask = () => {
           ) : (
             <FontAwesomeIcon icon={faPlay} />
           )}
+        </button>
+        <button
+          className={classes["view-log"]}
+          type="button"
+          onClick={taskLogHandler}
+        >
+          >>>
         </button>
       </div>
       {showOptionButtons && <OptionButtons />}

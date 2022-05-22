@@ -20,6 +20,12 @@
   border-radius: 25px;
   padding-left: 22px;
   padding-right: 22px;
+  transition: 0.3s ease-in-out;
+}
+
+.new-task-btn:hover {
+  cursor: pointer;
+  background-color: #242424;
 }
 
 .edit-log-btn {

@@ -23,7 +23,10 @@ const TaskLog = (props) => {
       </div>
       <hr className={classes.line}></hr>
       <LoggedTasks tasks={props.tasks} />
-      <LogFooter />
+      <LogFooter
+        setShowNewTask={props.setShowNewTask}
+        setShowTaskLog={props.setShowTaskLog}
+      />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import "./App.css";
 import TaskLog from "./components/TaskLog";
 import NewTask from "./components/NewTask";
+import { useState } from "react";
 
 const tasks = [
   {
@@ -31,11 +32,24 @@ const tasks = [
 ];
 
 function App() {
+  const [showNewTask, setShowNewTask] = useState(true);
+  const [showTaskLog, setShowTaskLog] = useState(false);
   console.log("App.js re-rendered.");
   return (
     <div className="container">
-      {/* <NewTask /> */}
-      <TaskLog tasks={tasks} />
+      {showNewTask && (
+        <NewTask
+          setShowNewTask={setShowNewTask}
+          setShowTaskLog={setShowTaskLog}
+        />
+      )}
+      {showTaskLog && (
+        <TaskLog
+          tasks={tasks}
+          setShowNewTask={setShowNewTask}
+          setShowTaskLog={setShowTaskLog}
+        />
+      )}
     </div>
   );
 }

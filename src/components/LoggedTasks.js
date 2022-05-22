@@ -14,7 +14,7 @@ const LoggedTasks = (props) => {
         })}
       {props.tasks.length === 0 && (
         <div className={classes["empty-list-container"]}>
-          <p>No tasks found!</p>
+          <p>No tasks done today!</p>
         </div>
       )}
     </>
@@ -22,6 +22,3 @@ const LoggedTasks = (props) => {
 };
 
 export default LoggedTasks;
-
-// If there are any tasks in the database, render the footer component as well.  If the tasks are empty, render some text
-// instead.
