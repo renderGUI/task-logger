@@ -1,0 +1,33 @@
+.line {
+  width: 95%;
+  border: 1px solid #003868;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  row-gap: 20px;
+}
+
+.new-task-btn {
+  font-size: 1.5rem;
+  color: #ffffff;
+  background-color: #77dd77;
+  border: none;
+  border-radius: 25px;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.edit-log-btn {
+  font-size: 1.125rem;
+  color: #ffffff;
+  background-color: #003868;
+  border: none;
+  border-radius: 25px;
+  padding-left: 22px;
+  padding-right: 22px;
+}
