@@ -3,55 +3,20 @@
 }
 
 .container {
-  background-color: #01315a;
-  width: 75%;
-  height: 85vh;
-  border-radius: 25px;
-}
-
-.header-container {
+  font-size: 1.5rem;  
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  color: #ffffff;
+  justify-content: space-between;
+  font-weight: 600;
 }
 
-.left-container {
+.task {
+  color: #ffffff;
   margin-left: 25px;
-  text-align: left;
 }
 
-.right-container {
-  margin-right: 25px;
-  text-align: right;
-}
-
-.date {
-  font-size: 3.75rem;
-}
-
-.total {
-  font-size: 1.5rem;
-}
-
-.filter-btn {
-  font-size: 1.5rem;
-  color: #ffffff;
-  background-color: #5787af;
-  border: none;
-  border-radius: 25px;
-}
-
-.filter-btn:hover {
-  cursor: pointer;
-}
-
-span {
+.time {
   color: #ffa500;
-}
-
-.line {
-    width: 95%;
-    border: 1px solid #003868;
+  margin-right: 25px;
 }

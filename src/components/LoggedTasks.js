@@ -1,27 +1,21 @@
 import classes from "./LoggedTasks.module.css";
 
-const LoggedTasks = () => {
+const LoggedTasks = (props) => {
   return (
-    <div className={classes.container}>
-      <div className={classes["header-container"]}>
-        <div className={classes["left-container"]}>
-          <h1 className={classes.date}>
-            Today,<br></br> <span>May 21</span>
-          </h1>
-        </div>
-
-        <div className={classes["right-container"]}>
-          <h2 className={classes.total}>
-            Total: <span>06:38:52</span>
-          </h2>
-          <button className={classes["filter-btn"]} type="button">
-            Filter
-          </button>
-        </div>
-      </div>
-      <hr className={classes.line}></hr>
-    </div>
+    <>
+      {props.tasks.map((task) => {
+        return (
+          <div className={classes.container} key={task.id}>
+            <p className={classes.task}>{task.loggedTask}</p>
+            <p className={classes.time}>{task.loggedTime}</p>
+          </div>
+        );
+      })}
+    </>
   );
 };
 
 export default LoggedTasks;
+
+// If there are any tasks in the database, render the footer component as well.  If the tasks are empty, render some text
+// instead.
