@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 25px;
+  margin-top: 25px;
+}
+
+.save-btn,
+.delete-btn {
+  border: none;
+  border-radius: 25px;
+  font-size: 1.125rem;
+  color: #ffffff;
+  background-color: #ffa500;
+  width: 125px;
+}
+
+.save-btn:hover,
+.delete-btn:hover {
+  cursor: pointer;
+  background-color: #d18903;
+}
