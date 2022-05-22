@@ -1,39 +1,19 @@
 import "./App.css";
 import TaskLog from "./components/TaskLog";
 import NewTask from "./components/NewTask";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const tasks = [
-  {
-    loggedTask: "House chores",
-    loggedTime: "00:29:12",
-    id: 1,
-  },
-  {
-    loggedTask: "Chemistry homework",
-    loggedTime: "01:02:36",
-    id: 2,
-  },
-  {
-    loggedTask: "Art commissions",
-    loggedTime: "02:08:55",
-    id: 3,
-  },
-  {
-    loggedTask: "Guitar practice",
-    loggedTime: "01:16:04",
-    id: 4,
-  },
-  {
-    loggedTask: "Strength training",
-    loggedTime: "00:58:40",
-    id: 5,
-  },
-];
+const App = () => {
+  const [showNewTask, setShowNewTask] = useState(false);
+  const [showTaskLog, setShowTaskLog] = useState(true);
+  const [tasks, setTasks] = useState([]);
 
-function App() {
-  const [showNewTask, setShowNewTask] = useState(true);
-  const [showTaskLog, setShowTaskLog] = useState(false);
+  useEffect(() => {
+    fetch("http://localhost:3001/tasks")
+      .then((response) => response.json())
+      .then((data) => setTasks(data));
+  }, []);
+
   console.log("App.js re-rendered.");
   return (
     <div className="container">
@@ -52,6 +32,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;

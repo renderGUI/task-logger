@@ -14,7 +14,7 @@ const LoggedTasks = (props) => {
         })}
       {props.tasks.length === 0 && (
         <div className={classes["empty-list-container"]}>
-          <p>No tasks done today!</p>
+          <p>No logged tasks today!</p>
         </div>
       )}
     </>
