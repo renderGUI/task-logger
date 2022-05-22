@@ -28,11 +28,6 @@ const tasks = [
     loggedTime: "00:58:40",
     id: 5,
   },
-  {
-    loggedTask: "Painting",
-    loggedTime: "00:43:25",
-    id: 6,
-  },
 ];
 
 function App() {

@@ -14,6 +14,8 @@
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .left-container {
@@ -28,7 +30,8 @@
 
 .date {
   font-size: 3.75rem;
-  margin-bottom: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .total {

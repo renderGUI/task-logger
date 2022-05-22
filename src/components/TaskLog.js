@@ -1,5 +1,6 @@
 import classes from "./TaskLog.module.css";
 import LoggedTasks from "./LoggedTasks";
+import LogFooter from "./LogFooter";
 
 const TaskLog = (props) => {
   return (
@@ -21,9 +22,8 @@ const TaskLog = (props) => {
         </div>
       </div>
       <hr className={classes.line}></hr>
-      <div>
-          <LoggedTasks tasks={props.tasks} />
-      </div>
+      <LoggedTasks tasks={props.tasks} />
+      <LogFooter />
     </div>
   );
 };
