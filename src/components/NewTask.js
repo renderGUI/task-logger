@@ -81,7 +81,7 @@ const NewTask = (props) => {
           >>>
         </button>
       </div>
-      {showOptionButtons && <OptionButtons />}
+      {showOptionButtons && <OptionButtons task={task} />}
     </div>
   );
 };
