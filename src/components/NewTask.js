@@ -12,6 +12,7 @@ const NewTask = (props) => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [showOptionButtons, setShowOptionButtons] = useState(false);
   const [shake, setShake] = useState(0);
+  const [retrievedTime, setRetrievedTime] = useState('');
 
   const changeHandler = (e) => {
     setTask(e.target.value);
@@ -41,6 +42,10 @@ const NewTask = (props) => {
     props.setShowTaskLog(true);
   };
 
+  const stopwatchTime = (retrievedTime) => {
+    setRetrievedTime(retrievedTime);
+  };
+
   return (
     <div>
       <div
@@ -59,7 +64,10 @@ const NewTask = (props) => {
           onChange={changeHandler}
           disabled={isDisabled}
         ></input>
-        <Stopwatch stopwatchIsRunning={stopwatchIsRunning} />
+        <Stopwatch
+          stopwatchIsRunning={stopwatchIsRunning}
+          stopwatchTime={stopwatchTime}
+        />
         <button
           className={classes.btn}
           onClick={toggleStopwatch}
@@ -81,7 +89,7 @@ const NewTask = (props) => {
           >>>
         </button>
       </div>
-      {showOptionButtons && <OptionButtons task={task} />}
+      {showOptionButtons && <OptionButtons task={task} retrievedTime={retrievedTime} />}
     </div>
   );
 };

@@ -38,6 +38,8 @@ const Stopwatch = (props) => {
     }
   }, [second, minute]);
 
+  props.stopwatchTime(time);
+
   return (
     <>
       <p className={classes.time}>{time}</p>

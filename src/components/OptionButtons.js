@@ -8,7 +8,7 @@ const OptionButtons = (props) => {
   const saveHandler = async () => {
     const taskObject = {
       loggedTask: props.task,
-      loggedTime: "01:02:36",
+      loggedTime: props.retrievedTime,
     };
     const response = await fetch("http://localhost:3001/tasks", {
       method: "POST",
