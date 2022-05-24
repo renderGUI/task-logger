@@ -7,7 +7,7 @@ const OptionButtons = (props) => {
 
   const saveHandler = async () => {
     const taskObject = {
-      loggedTask: props.task,
+      loggedTask: props.task.current.value,
       loggedTime: props.retrievedTime,
     };
     const response = await fetch("http://localhost:3001/tasks", {

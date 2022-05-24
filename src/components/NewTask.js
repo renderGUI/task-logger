@@ -3,23 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Stopwatch from "./Stopwatch";
 import OptionButtons from "./OptionButtons";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const NewTask = (props) => {
   console.log("NewTask.js re-rendered.");
   const [stopwatchIsRunning, setStopwatchIsRunning] = useState(false);
-  const [task, setTask] = useState("");
+  const task = useRef();
   const [isDisabled, setIsDisabled] = useState(false);
   const [showOptionButtons, setShowOptionButtons] = useState(false);
   const [shake, setShake] = useState(0);
   const [retrievedTime, setRetrievedTime] = useState('');
 
-  const changeHandler = (e) => {
-    setTask(e.target.value);
-  };
-
   const toggleStopwatch = () => {
-    if (task.trim().length === 0) {
+    if (task.current.value.trim().length === 0) {
       setShake(1);
       return;
     }
@@ -60,8 +56,7 @@ const NewTask = (props) => {
           className={classes.input}
           type="text"
           placeholder="What are you about to do?"
-          value={task}
-          onChange={changeHandler}
+          ref={task}
           disabled={isDisabled}
         ></input>
         <Stopwatch
