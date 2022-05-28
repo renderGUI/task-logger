@@ -2,6 +2,7 @@ import "./App.css";
 import TaskLog from "./components/TaskLog";
 import NewTask from "./components/NewTask";
 import { useState, useEffect } from "react";
+import { tasksContext } from "./contexts/tasksContext";
 
 const App = () => {
   const [showNewTask, setShowNewTask] = useState(false);
@@ -16,21 +17,22 @@ const App = () => {
 
   console.log("App.js re-rendered.");
   return (
-    <div className="container">
-      {showNewTask && (
-        <NewTask
-          setShowNewTask={setShowNewTask}
-          setShowTaskLog={setShowTaskLog}
-        />
-      )}
-      {showTaskLog && (
-        <TaskLog
-          tasks={tasks}
-          setShowNewTask={setShowNewTask}
-          setShowTaskLog={setShowTaskLog}
-        />
-      )}
-    </div>
+    <tasksContext.Provider value={{ tasks, setTasks }}>
+      <div className="container">
+        {showNewTask && (
+          <NewTask
+            setShowNewTask={setShowNewTask}
+            setShowTaskLog={setShowTaskLog}
+          />
+        )}
+        {showTaskLog && (
+          <TaskLog
+            setShowNewTask={setShowNewTask}
+            setShowTaskLog={setShowTaskLog}
+          />
+        )}
+      </div>
+    </tasksContext.Provider>
   );
 };
 

@@ -1,6 +1,10 @@
 import classes from "./OptionButtons.module.css";
+import { useContext } from "react";
+import { tasksContext } from "../contexts/tasksContext";
 
 const OptionButtons = (props) => {
+  const { tasks, setTasks } = useContext(tasksContext);
+
   const deleteHandler = () => {
     window.location.reload();
   };
@@ -18,7 +22,7 @@ const OptionButtons = (props) => {
       body: JSON.stringify(taskObject),
     });
     const data = await response.json();
-    console.log(data);
+    setTasks(tasks.concat(data));
   };
 
   return (
