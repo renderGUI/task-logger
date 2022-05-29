@@ -1,15 +1,17 @@
 import classes from "./TaskLog.module.css";
 import LoggedTasks from "./LoggedTasks";
 import LogFooter from "./LogFooter";
+import CurrentDate from "./CurrentDate";
+import { useState } from "react";
 
 const TaskLog = (props) => {
+  const [editIsEnabled, setEditIsEnabled] = useState(false);
+
   return (
     <div className={classes.container}>
       <div className={classes["header-container"]}>
         <div className={classes["left-container"]}>
-          <h1 className={classes.date}>
-            Today,<br></br> <span>May 21</span>
-          </h1>
+          <CurrentDate />
         </div>
 
         <div className={classes["right-container"]}>
@@ -22,10 +24,11 @@ const TaskLog = (props) => {
         </div>
       </div>
       <hr className={classes.line}></hr>
-      <LoggedTasks />
+      <LoggedTasks editIsEnabled={editIsEnabled} />
       <LogFooter
         setShowNewTask={props.setShowNewTask}
         setShowTaskLog={props.setShowTaskLog}
+        setEditIsEnabled={setEditIsEnabled}
       />
     </div>
   );

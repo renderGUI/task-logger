@@ -1,0 +1,12 @@
+.trash {
+  color: #dd7777;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+.trash:hover {
+  cursor: pointer;
+  color: #b35a5a;
+}

@@ -5,6 +5,11 @@ const LogFooter = (props) => {
     props.setShowTaskLog(false);
     props.setShowNewTask(true);
   };
+
+  const editLogHandler = () => {
+    props.setEditIsEnabled(true);
+  };
+
   return (
     <>
       <hr className={classes.line}></hr>
@@ -12,7 +17,9 @@ const LogFooter = (props) => {
         <button className={classes["new-task-btn"]} onClick={newTaskHandler}>
           Start a New Task
         </button>
-        <button className={classes["edit-log-btn"]}>Edit</button>
+        <button className={classes["edit-log-btn"]} onClick={editLogHandler}>
+          Edit
+        </button>
       </div>
     </>
   );
