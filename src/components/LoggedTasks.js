@@ -14,7 +14,7 @@ const LoggedTasks = (props) => {
             <div className={classes.container} key={task.id}>
               <p className={classes.task}>{task.loggedTask}</p>
               <p className={classes.time}>{task.loggedTime}</p>
-              {props.editIsEnabled && <DeleteTask />}
+              {props.editIsEnabled && <DeleteTask id={task.id} />}
             </div>
           );
         })}

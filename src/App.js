@@ -10,9 +10,13 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/tasks")
-      .then((response) => response.json())
-      .then((data) => setTasks(data));
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:3001/tasks");
+      const data = await response.json();
+      setTasks(data);
+    };
+
+    fetchData();
   }, []);
 
   console.log("App.js re-rendered.");
