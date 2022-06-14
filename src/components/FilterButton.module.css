@@ -1,0 +1,13 @@
+.filterBtn {
+  font-size: 1.5rem;
+  color: #ffffff;
+  background-color: #5787af;
+  border: none;
+  border-radius: 25px;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.filterBtn:hover {
+  cursor: pointer;
+}

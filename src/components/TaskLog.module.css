@@ -1,7 +1,3 @@
-* {
-  /* outline: 1px solid red; */
-}
-
 .container {
   background-color: #01315a;
   width: 75%;
@@ -26,10 +22,6 @@
 .right-container {
   margin-right: 25px;
   text-align: right;
-}
-
-.total {
-  font-size: 1.5rem;
 }
 
 span {
