@@ -3,7 +3,6 @@ import LoggedTasks from "./LoggedTasks";
 import LogFooter from "./LogFooter";
 import CurrentDate from "./CurrentDate";
 import { useState } from "react";
-import FilterButton from "./FilterButton";
 import TotalTime from "./TotalTime";
 
 const TaskLog = (props) => {
@@ -18,7 +17,6 @@ const TaskLog = (props) => {
 
         <div className={classes["right-container"]}>
           <TotalTime />
-          <FilterButton />
         </div>
       </div>
       <hr className={classes.line}></hr>
