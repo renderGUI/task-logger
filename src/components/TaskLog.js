@@ -1,7 +1,6 @@
 import classes from "./TaskLog.module.css";
 import LoggedTasks from "./LoggedTasks";
 import LogFooter from "./LogFooter";
-import CurrentDate from "./CurrentDate";
 import { useState } from "react";
 import TotalTime from "./TotalTime";
 
@@ -12,7 +11,12 @@ const TaskLog = (props) => {
     <div className={classes.container}>
       <div className={classes["header-container"]}>
         <div className={classes["left-container"]}>
-          <CurrentDate />
+          <h1 className={classes["main-heading"]}>
+            Task<br></br>{" "}
+            <span>
+              Logger
+            </span>
+          </h1>
         </div>
 
         <div className={classes["right-container"]}>

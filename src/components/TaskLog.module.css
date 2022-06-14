@@ -19,6 +19,12 @@
   text-align: left;
 }
 
+.main-heading {
+  font-size: 3.75rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .right-container {
   margin-right: 25px;
   text-align: right;
