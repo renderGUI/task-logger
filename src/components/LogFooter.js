@@ -7,7 +7,7 @@ const LogFooter = (props) => {
   };
 
   const editLogHandler = () => {
-    props.setEditIsEnabled(true);
+    props.setEditIsEnabled(!props.editIsEnabled);
   };
 
   return (
@@ -18,7 +18,7 @@ const LogFooter = (props) => {
           Start a New Task
         </button>
         <button className={classes["edit-log-btn"]} onClick={editLogHandler}>
-          Edit
+          {props.editIsEnabled ? "Done" : "Edit"}
         </button>
       </div>
     </>

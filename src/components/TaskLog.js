@@ -3,6 +3,7 @@ import LoggedTasks from "./LoggedTasks";
 import LogFooter from "./LogFooter";
 import CurrentDate from "./CurrentDate";
 import { useState } from "react";
+import FilterButton from "./FilterButton";
 
 const TaskLog = (props) => {
   const [editIsEnabled, setEditIsEnabled] = useState(false);
@@ -18,9 +19,7 @@ const TaskLog = (props) => {
           <h2 className={classes.total}>
             Total: <span>06:38:52</span>
           </h2>
-          <button className={classes["filter-btn"]} type="button">
-            Filter
-          </button>
+          <FilterButton />
         </div>
       </div>
       <hr className={classes.line}></hr>
@@ -28,6 +27,7 @@ const TaskLog = (props) => {
       <LogFooter
         setShowNewTask={props.setShowNewTask}
         setShowTaskLog={props.setShowTaskLog}
+        editIsEnabled={editIsEnabled}
         setEditIsEnabled={setEditIsEnabled}
       />
     </div>
