@@ -10,7 +10,9 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3001/tasks");
+      const response = await fetch(
+        "https://tasks-rendergui.herokuapp.com/tasks"
+      );
       const data = await response.json();
       setTasks(data);
     };

@@ -8,12 +8,15 @@ const DeleteTask = (props) => {
   const { setTasks } = useContext(tasksContext);
 
   const deleteTaskHandler = async () => {
-    const response = await fetch(`http://localhost:3001/tasks/${props.id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://tasks-rendergui.herokuapp.com/tasks/${props.id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = response.json();
     console.log(data);
 
@@ -21,7 +24,7 @@ const DeleteTask = (props) => {
   };
 
   const fetchData = async () => {
-    const response = await fetch("http://localhost:3001/tasks");
+    const response = await fetch("https://tasks-rendergui.herokuapp.com/tasks");
     const data = await response.json();
     setTasks(data);
   };

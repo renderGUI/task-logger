@@ -16,13 +16,16 @@ const OptionButtons = (props) => {
       loggedTask: props.task.current.value,
       loggedTime: props.retrievedTime,
     };
-    const response = await fetch("http://localhost:3001/tasks", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(taskObject),
-    });
+    const response = await fetch(
+      "https://tasks-rendergui.herokuapp.com/tasks",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(taskObject),
+      }
+    );
     const data = await response.json();
     setTasks(tasks.concat(data));
     navigate("/");
