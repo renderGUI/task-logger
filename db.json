@@ -1,27 +1,27 @@
 {
   "tasks": [
     {
-      "loggedTask": "House chores",
+      "loggedTask": "Task #1",
       "loggedTime": "00:29:12",
       "id": 1
     },
     {
-      "loggedTask": "Chemistry homework",
+      "loggedTask": "Task #2",
       "loggedTime": "01:02:36",
       "id": 2
     },
     {
-      "loggedTask": "Art commissions",
+      "loggedTask": "Task #3",
       "loggedTime": "02:08:55",
       "id": 3
     },
     {
-      "loggedTask": "Guitar practice",
+      "loggedTask": "Task #4",
       "loggedTime": "01:16:04",
       "id": 4
     },
     {
-      "loggedTask": "Strength training",
+      "loggedTask": "Task #5",
       "loggedTime": "00:58:40",
       "id": 5
     }

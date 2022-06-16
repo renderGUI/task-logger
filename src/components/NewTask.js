@@ -12,7 +12,7 @@ const NewTask = (props) => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [showOptionButtons, setShowOptionButtons] = useState(false);
   const [shake, setShake] = useState(0);
-  const [retrievedTime, setRetrievedTime] = useState('');
+  const [retrievedTime, setRetrievedTime] = useState("");
 
   const toggleStopwatch = () => {
     if (task.current.value.trim().length === 0) {
@@ -76,15 +76,26 @@ const NewTask = (props) => {
             <FontAwesomeIcon icon={faPlay} />
           )}
         </button>
-        <button
-          className={classes["view-log"]}
-          type="button"
-          onClick={taskLogHandler}
-        >
-          >>>
-        </button>
+        {stopwatchIsRunning || showOptionButtons ? (
+          ""
+        ) : (
+          <button
+            className={classes["view-log"]}
+            type="button"
+            onClick={taskLogHandler}
+          >
+            >>>
+          </button>
+        )}
       </div>
-      {showOptionButtons && <OptionButtons task={task} retrievedTime={retrievedTime} />}
+      {showOptionButtons && (
+        <OptionButtons
+          task={task}
+          retrievedTime={retrievedTime}
+          setShowNewTask={props.setShowNewTask}
+          setShowTaskLog={props.setShowTaskLog}
+        />
+      )}
     </div>
   );
 };

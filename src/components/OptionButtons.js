@@ -23,6 +23,8 @@ const OptionButtons = (props) => {
     });
     const data = await response.json();
     setTasks(tasks.concat(data));
+    props.setShowNewTask(false);
+    props.setShowTaskLog(true);
   };
 
   return (
