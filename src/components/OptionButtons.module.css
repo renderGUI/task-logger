@@ -7,8 +7,8 @@
   margin-top: 25px;
 }
 
-.save-btn,
-.delete-btn {
+.saveBtn,
+.deleteBtn {
   border: none;
   border-radius: 25px;
   font-size: 1.125rem;
@@ -17,8 +17,8 @@
   width: 125px;
 }
 
-.save-btn:hover,
-.delete-btn:hover {
+.saveBtn:hover,
+.deleteBtn:hover {
   cursor: pointer;
   background-color: #d18903;
 }

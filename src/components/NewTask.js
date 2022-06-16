@@ -81,7 +81,7 @@ const NewTask = (props) => {
           ""
         ) : (
           <button
-            className={classes["view-log"]}
+            className={classes.viewLog}
             type="button"
             onClick={taskLogHandler}
           >

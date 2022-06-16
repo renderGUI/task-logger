@@ -9,14 +9,14 @@ const TaskLog = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes["header-container"]}>
-        <div className={classes["left-container"]}>
-          <h1 className={classes["main-heading"]}>
+      <div className={classes.headerContainer}>
+        <div className={classes.leftContainer}>
+          <h1 className={classes.mainHeading}>
             Task<br></br> <span>Logger</span>
           </h1>
         </div>
 
-        <div className={classes["right-container"]}>
+        <div className={classes.rightContainer}>
           <TotalTime />
         </div>
       </div>

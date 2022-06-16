@@ -19,11 +19,11 @@ const LogFooter = (props) => {
         {props.editIsEnabled ? (
           ""
         ) : (
-          <button className={classes["new-task-btn"]} onClick={newTaskHandler}>
+          <button className={classes.newTaskBtn} onClick={newTaskHandler}>
             Start a New Task
           </button>
         )}
-        <button className={classes["edit-log-btn"]} onClick={editLogHandler}>
+        <button className={classes.editLogBtn} onClick={editLogHandler}>
           {props.editIsEnabled ? "Done" : "Edit"}
         </button>
       </div>

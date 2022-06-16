@@ -12,7 +12,7 @@
   row-gap: 20px;
 }
 
-.new-task-btn {
+.newTaskBtn {
   font-size: 1.5rem;
   color: #ffffff;
   background-color: #77dd77;
@@ -23,12 +23,12 @@
   transition: 0.3s ease-in-out;
 }
 
-.new-task-btn:hover {
+.newTaskBtn:hover {
   cursor: pointer;
   background-color: #242424;
 }
 
-.edit-log-btn {
+.editLogBtn {
   font-size: 1.125rem;
   color: #ffffff;
   background-color: #003868;
@@ -39,7 +39,7 @@
   transition: 0.3s ease-in-out;
 }
 
-.edit-log-btn:hover {
+.editLogBtn:hover {
   cursor: pointer;
   background-color: #002b50;
 }

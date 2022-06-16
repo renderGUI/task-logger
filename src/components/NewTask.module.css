@@ -84,7 +84,7 @@
   background-color: #242424;
 }
 
-.view-log {
+.viewLog {
   margin-left: 20px;
   border: none;
   background-color: transparent;
@@ -94,7 +94,7 @@
   transition: .3s ease-in-out;
 }
 
-.view-log:hover {
+.viewLog:hover {
   cursor: pointer;
   color: #ffffff;
 }

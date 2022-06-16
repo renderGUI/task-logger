@@ -33,10 +33,10 @@ const OptionButtons = (props) => {
 
   return (
     <div className={classes.container}>
-      <button className={classes["delete-btn"]} onClick={deleteHandler}>
+      <button className={classes.deleteBtn} onClick={deleteHandler}>
         Delete Task
       </button>
-      <button className={classes["save-btn"]} onClick={saveHandler}>
+      <button className={classes.saveBtn} onClick={saveHandler}>
         Save Task
       </button>
     </div>

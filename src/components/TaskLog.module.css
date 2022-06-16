@@ -4,7 +4,7 @@
   border-radius: 25px;
 }
 
-.header-container {
+.headerContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,18 +14,18 @@
   padding-bottom: 20px;
 }
 
-.left-container {
+.leftContainer {
   margin-left: 25px;
   text-align: left;
 }
 
-.main-heading {
+.mainHeading {
   font-size: 3.75rem;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.right-container {
+.rightContainer {
   margin-right: 25px;
   text-align: right;
 }
