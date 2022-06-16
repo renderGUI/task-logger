@@ -1,9 +1,11 @@
 import classes from "./LogFooter.module.css";
+import { useNavigate } from "react-router-dom";
 
 const LogFooter = (props) => {
+  const navigate = useNavigate();
+
   const newTaskHandler = () => {
-    props.setShowTaskLog(false);
-    props.setShowNewTask(true);
+    navigate("new-task");
   };
 
   const editLogHandler = () => {

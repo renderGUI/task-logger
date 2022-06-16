@@ -4,7 +4,7 @@ import LogFooter from "./LogFooter";
 import { useState } from "react";
 import TotalTime from "./TotalTime";
 
-const TaskLog = (props) => {
+const TaskLog = () => {
   const [editIsEnabled, setEditIsEnabled] = useState(false);
 
   return (
@@ -12,10 +12,7 @@ const TaskLog = (props) => {
       <div className={classes["header-container"]}>
         <div className={classes["left-container"]}>
           <h1 className={classes["main-heading"]}>
-            Task<br></br>{" "}
-            <span>
-              Logger
-            </span>
+            Task<br></br> <span>Logger</span>
           </h1>
         </div>
 
@@ -26,8 +23,6 @@ const TaskLog = (props) => {
       <hr className={classes.line}></hr>
       <LoggedTasks editIsEnabled={editIsEnabled} />
       <LogFooter
-        setShowNewTask={props.setShowNewTask}
-        setShowTaskLog={props.setShowTaskLog}
         editIsEnabled={editIsEnabled}
         setEditIsEnabled={setEditIsEnabled}
       />

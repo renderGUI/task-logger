@@ -3,10 +3,9 @@ import TaskLog from "./components/TaskLog";
 import NewTask from "./components/NewTask";
 import { useState, useEffect } from "react";
 import { tasksContext } from "./contexts/tasksContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const [showNewTask, setShowNewTask] = useState(false);
-  const [showTaskLog, setShowTaskLog] = useState(true);
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -23,18 +22,12 @@ const App = () => {
   return (
     <tasksContext.Provider value={{ tasks, setTasks }}>
       <div className="container">
-        {showNewTask && (
-          <NewTask
-            setShowNewTask={setShowNewTask}
-            setShowTaskLog={setShowTaskLog}
-          />
-        )}
-        {showTaskLog && (
-          <TaskLog
-            setShowNewTask={setShowNewTask}
-            setShowTaskLog={setShowTaskLog}
-          />
-        )}
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<TaskLog />} />
+            <Route path="new-task" element={<NewTask />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </tasksContext.Provider>
   );

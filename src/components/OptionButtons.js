@@ -1,9 +1,11 @@
 import classes from "./OptionButtons.module.css";
 import { useContext } from "react";
 import { tasksContext } from "../contexts/tasksContext";
+import { useNavigate } from "react-router-dom";
 
 const OptionButtons = (props) => {
   const { tasks, setTasks } = useContext(tasksContext);
+  const navigate = useNavigate();
 
   const deleteHandler = () => {
     window.location.reload();
@@ -23,8 +25,7 @@ const OptionButtons = (props) => {
     });
     const data = await response.json();
     setTasks(tasks.concat(data));
-    props.setShowNewTask(false);
-    props.setShowTaskLog(true);
+    navigate("/");
   };
 
   return (

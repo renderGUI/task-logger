@@ -4,6 +4,7 @@ import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Stopwatch from "./Stopwatch";
 import OptionButtons from "./OptionButtons";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const NewTask = (props) => {
   console.log("NewTask.js re-rendered.");
@@ -13,6 +14,7 @@ const NewTask = (props) => {
   const [showOptionButtons, setShowOptionButtons] = useState(false);
   const [shake, setShake] = useState(0);
   const [retrievedTime, setRetrievedTime] = useState("");
+  const navigate = useNavigate();
 
   const toggleStopwatch = () => {
     if (task.current.value.trim().length === 0) {
@@ -34,8 +36,7 @@ const NewTask = (props) => {
   }, [stopwatchIsRunning]);
 
   const taskLogHandler = () => {
-    props.setShowNewTask(false);
-    props.setShowTaskLog(true);
+    navigate("/");
   };
 
   const stopwatchTime = (retrievedTime) => {
@@ -89,12 +90,7 @@ const NewTask = (props) => {
         )}
       </div>
       {showOptionButtons && (
-        <OptionButtons
-          task={task}
-          retrievedTime={retrievedTime}
-          setShowNewTask={props.setShowNewTask}
-          setShowTaskLog={props.setShowTaskLog}
-        />
+        <OptionButtons task={task} retrievedTime={retrievedTime} />
       )}
     </div>
   );
