@@ -2,7 +2,6 @@ import classes from "./Stopwatch.module.css";
 import { useState, useEffect } from "react";
 
 const Stopwatch = (props) => {
-  console.log("Stopwatch.js re-rendered.");
   const [hour, setHour] = useState(0);
   const [minute, setMinute] = useState(0);
   const [second, setSecond] = useState(0);

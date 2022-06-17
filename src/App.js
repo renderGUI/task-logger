@@ -20,7 +20,6 @@ const App = () => {
     fetchData();
   }, []);
 
-  console.log("App.js re-rendered.");
   return (
     <tasksContext.Provider value={{ tasks, setTasks }}>
       <div className="container">

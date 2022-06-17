@@ -6,8 +6,7 @@ import OptionButtons from "./OptionButtons";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const NewTask = (props) => {
-  console.log("NewTask.js re-rendered.");
+const NewTask = () => {
   const [stopwatchIsRunning, setStopwatchIsRunning] = useState(false);
   const task = useRef();
   const [isDisabled, setIsDisabled] = useState(false);
